@@ -4,7 +4,8 @@ const asyncHandler = require('../middleware/asyncHandler');
 const { sendTokenResponse } = require('../utils/token');
 
 const register = asyncHandler(async (req, res) => {
-  const { name, email, password, role } = req.body;
+  const { name, email: rawEmail, password, role } = req.body;
+  const email = rawEmail?.trim().toLowerCase();
 
   const existingUser = await User.findOne({ email });
   if (existingUser) {
@@ -29,7 +30,8 @@ const register = asyncHandler(async (req, res) => {
 });
 
 const login = asyncHandler(async (req, res) => {
-  const { email, password } = req.body;
+  const { email: rawEmail, password } = req.body;
+  const email = rawEmail?.trim().toLowerCase();
 
   const user = await User.findOne({ email }).select('+password');
   if (!user || !(await user.comparePassword(password))) {
