@@ -5,9 +5,9 @@ services:
     region: oregon
     plan: free
     branch: main
-    root: .
-    dockerBuildContext: backend
-    dockerfilePath: backend/Dockerfile
+    root: backend
+    dockerBuildContext: .
+    dockerfilePath: Dockerfile
     startCommand: npm start
     autoDeploy: true
     envVars:
