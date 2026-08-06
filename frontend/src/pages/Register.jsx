@@ -33,7 +33,6 @@ export default function Register() {
         name: form.name,
         email: form.email,
         password: form.password,
-        role: 'admin',
       });
       navigate(user.role === 'admin' ? '/admin' : '/employee');
     } catch (err) {
@@ -46,7 +45,7 @@ export default function Register() {
       <div className="w-full max-w-md rounded-2xl border border-slate-200 bg-white p-8 shadow-sm">
         <div className="mb-8 text-center">
           <h1 className="text-2xl font-bold text-indigo-600">TaskFlow</h1>
-          <p className="mt-2 text-slate-600">Create the first admin account</p>
+          <p className="mt-2 text-slate-600">Create your account</p>
         </div>
 
         <Alert type="error" message={error} onClose={() => setError('')} />

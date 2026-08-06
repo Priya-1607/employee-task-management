@@ -1,3 +1,4 @@
+const crypto = require('crypto');
 const User = require('../models/User');
 const AppError = require('../utils/AppError');
 const asyncHandler = require('../middleware/asyncHandler');
