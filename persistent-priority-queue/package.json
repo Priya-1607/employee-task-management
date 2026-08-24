@@ -1,0 +1,17 @@
+{
+  "name": "persistent-priority-queue",
+  "version": "1.0.0",
+  "description": "Persistent priority queue with PostgreSQL storage",
+  "main": "module.js",
+  "scripts": {
+    "setup": "node scripts/setup.js",
+    "demo": "node demo.js",
+    "test": "node test.js"
+  },
+  "engines": {
+    "node": ">=18"
+  },
+  "dependencies": {
+    "pg": "^8.13.1"
+  }
+}
